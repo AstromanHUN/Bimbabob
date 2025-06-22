@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="bimba bob pictures/bimbabob6.jpg">
+    <title>Bimba Bob</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: linear-gradient(
+                to bottom,
+                #000000 0%,
+                #1a1a00 25%,
+                #333300 50%,
+                #ffee00 85%,
+                #ffff33 100%
+            );
+            min-height: 100vh;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 100;
+            border-bottom: 2px solid #ffee00;
+        }
+
+        .titletext {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .titletext h1 {
+            color: #ffee00;
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-shadow: 0 0 20px rgba(255, 238, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .gallery-container {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: #ffee00;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffee00;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 238, 0, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+
+        .gallery-item-content {
+            padding: 20px;
+        }
+
+        .gallery-item h3 {
+            color: #ffee00;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .loading-indicator {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255, 238, 0, 0.3);
+            border-top: 2px solid #ffee00;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 10px;
+            }
+            
+            .gallery-container {
+                padding: 40px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="titletext">
+            <h1>Bimba Bob</h1>
+        </div>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob1.jpeg" alt="Első kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimbabob főz</h3>
+                    <p>Bimbabob gigantikus testét villantva főz.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob2.jpg" alt="Második kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimba jaw lineja</h3>
+                    <p>Bimbabob óriási gigantikus jaw lineja.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob3.jpg" alt="Harmadik kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimbabob csücsörít</h3>
+                    <p>Bimbabob csücsörít ez a párzáshoz tartozik.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob4.jpg" alt="Negyedik kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimba bob arca</h3>
+                    <p>Bimbabob évente egyszer húzza elő a sima chad arcát.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob5.jpg" alt="Ötödik kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimbabob villant</h3>
+                    <p>Bimbabob most is villant.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <img src="bimba bob pictures/bimbabob6.jpg" alt="Hatodik kép" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item-content">
+                    <h3>Bimbabob arca szemből</h3>
+                    <p>Bimbabob csak komoly helyzetekbe néz így ez meglepő.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
